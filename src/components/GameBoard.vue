@@ -7,22 +7,42 @@
 
   const alphabet: string[] = Array.from({ length: 26 }, (_, index) => String.fromCharCode(charCodeFromA(index)));
 
-
+  // Ensure "A" is present at the beginning of the game
+  // before starting the game as it's the first character in the alphabet
   let shuffled: string[] = alphabet
-    .slice(1) //remove "A"
+    .slice(1)
     .map(value => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
-
-  let currentGame: string[] = [];
-  
+    
+  let currentGame: string[] = shuffled.slice(0, 15);
+  currentGame.splice(Math.floor(Math.random() * 15), 0, "A");
 </script>
 
 <template>
   <div class="game-wrapper">
-    <div v-for="char in alphabet" :key="char" class="cell">{{ char }}</div>
+    <div v-for="char in currentGame" :key="char" class="cell">{{ char }}</div>
   </div>
 </template>
 
 <style>
+  .game-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    width: 400px;
+  }
+
+  .cell {
+    display: block;
+
+    width: 80px;
+    height: 80px;
+
+    text-align: center;
+
+    border: 1px solid #f00;
+    border-radius: 5px;
+  }
 </style>

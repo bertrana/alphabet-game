@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import GameBoard from '@/components/GameBoard.vue';
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <h1>От А до Я</h1>
+    <p class="game-instruction">Нажимайте на буквы аааааа</p>
+
+    <GameBoard></GameBoard>
   </main>
 </template>

@@ -10,3 +10,11 @@ import GameBoard from '@/components/GameBoard.vue';
     <GameBoard></GameBoard>
   </main>
 </template>
+
+<style>
+  main {
+    max-width: 400px;
+
+    margin: 0 auto;
+  }
+</style>

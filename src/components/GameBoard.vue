@@ -28,7 +28,7 @@
     
       if (currentGame.includes(alphabet[0])) {
         nextChar = leftover.shift();
-        if (!nextChar) nextChar = "empty" ; // TODO: empty cell
+        if (!nextChar) nextChar = " " ; // TODO: empty cell
       } else {
         nextChar = alphabet[0];
         leftover.splice(leftover.indexOf(alphabet[0]), 1);
@@ -53,18 +53,19 @@
 
 <style>
   .game-wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 10px;
 
     width: 400px;
+    height: 400px;
   }
 
   .cell {
     display: block;
-
-    width: 80px;
-    height: 80px;
+    box-sizing: border-box;
+    padding-top: 35px;
 
     text-align: center;
 

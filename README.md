@@ -21,6 +21,12 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
+## Deployment
+
+The project is automatically deployed to GitHub Pages using the `github-pages-deploy-action`. Changes to the `master` branch trigger a deployment to the `gh-pages` branch, which is used to host the live demo.
+
+Demo: [https://bertrana.github.io/alphabet-game/](https://bertrana.github.io/alphabet-game/)
+
 ## Project Setup
 
 ```sh
